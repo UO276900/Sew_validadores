@@ -101,24 +101,7 @@
             <input type="submit" name="cargarJugadores" value="Seleccionar">
         </form>
 
-                    <form method="post" action="#">
-                <label for="jugadorSeleccionado">Selecciona un jugador:</label>
-                <select name="jugadorSeleccionado" id="jugadorSeleccionado" required="">
-                    <option value="">Selecciona un jugador</option>
-                    <option value="1">Nicolas Navarro</option><option value="2">Rafael Rodriguez</option><option value="3">Pelayo Fernandez</option><option value="4">Carlos Perez</option><option value="5">Diego Morales</option><option value="6">Alejandro Espinosa</option><option value="7">Lucas Castro</option><option value="8">Alejandro Maguregui</option><option value="9">Marcos Arguelles</option><option value="10">Mateo Rodriguez</option><option value="11">Diego Charro</option><option value="12">Nicolas Nicolez</option><option value="13">Pelayo Rodriguez</option><option value="14">Santos Bravo</option><option value="15">Samuel Mesa</option><option value="16">Javier Kelly</option><option value="17">Jorge Jorginez</option><option value="18">Adrian Estrada</option>                </select>
-
-                <label for="puntos">Número de puntos:</label>
-                <input type="number" name="puntos" id="puntos" required="">
-
-                <label for="bloqueos">Número de bloqueos:</label>
-                <input type="number" name="bloqueos" id="bloqueos" required="">
-
-                <label for="ataquesExitosos">Número de ataques exitosos:</label>
-                <input type="number" name="ataquesExitosos" id="ataquesExitosos" required="">
-
-                <input type="submit" name="guardarStats" value="Guardar Estadísticas">
-            </form>
-                    </section>
+                </section>
         <section>
             <h3>Ver Estadísticas de Jugador</h3>
 
@@ -130,7 +113,11 @@
                 <input type="submit" name="mostrarStats" value="Ver Estadísticas">
             </form>
 
-                    </section>
+            <h4>Estadísticas de Rafael Rodriguez:</h4><table><tbody><tr>
+                            <th scope="col" id="puntos">Puntos</th>
+                            <th scope="col" id="bloqueos">Bloqueos</th>
+                            <th scope="col" id="ataques">Ataques Exitosos</th>
+                          </tr><tr><td headers="puntos">3</td><td headers="bloqueos">3</td><td headers="ataques">3</td></tr></tbody></table>        </section>
         <section>
             <h3>Añadir Resultado</h3>
             <form method="post" action="#">
