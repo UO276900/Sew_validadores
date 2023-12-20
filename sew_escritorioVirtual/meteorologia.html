@@ -1,21 +1,17 @@
 <!DOCTYPE HTML>
-<html lang="es">
-<head>
+<html lang="es"><head>
  <!-- Datos que describen el documento -->
- <meta charset="UTF-8" />
+ <meta charset="UTF-8">
  <link rel="icon" type="image/icon" href="multimedia/favicon.ico">
  <title> Escritorio Virtual - Meteorología</title>
- <meta name ="author" content ="Adrian Estrada González" />
- <meta name ="description" content ="Meteorología" />
- <meta name ="keywords" content ="meteorologia, tiempo, chile, santiago, lluvia, soleado, nublado" />
- <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
- <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
- <script
-  src="https://code.jquery.com/jquery-3.7.1.min.js"
-  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-  crossorigin="anonymous">
+ <meta name="author" content="Adrian Estrada González">
+ <meta name="description" content="Meteorología">
+ <meta name="keywords" content="meteorologia, tiempo, chile, santiago, lluvia, soleado, nublado">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" type="text/css" href="estilo/estilo.css">
+ <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
 </script>
- <script src="js/pais.js" ></script>
+ <script src="js/pais.js"></script>
 </head>
 <body>
  <!-- Datos con el contenido que aparece en el navegador -->
@@ -42,6 +38,63 @@
     pais.writeCoordsCapital();
     pais.getWeatherData();
  
- </script>
-</body>
-</html>
+ </script><main> <h2> Chile </h2><h3> Capital: Santiago de Chile</h3> <h3> Datos de Chile </h3>  <ul> <li> Número de habitantes: 19.490.000</li> <li> Tipo de gobierno: República</li> <li> Religión mayoritaria: Católica</li> </ul><h3> Coordenadas de la capital </h3><p> -33.45694, -70.62827</p>
+
+
+
+                    <table>
+                        <caption> Datos meteorológicos de Santiago de Chile en los próximos 5 días </caption>
+                        <tbody><tr>
+                            <th scope="col" id="dia">Día</th>
+                            <th scope="col" id="tempmax">Temp Máxima (°C)</th>
+                            <th scope="col" id="tempmin">Temp Mínima (°C)</th>
+                            <th scope="col" id="humedad">Humedad (%)</th>
+                            <th scope="col" id="icono">Icono</th>
+                            <th scope="col" id="lluvia">Lluvia (mm)</th>
+                        </tr>
+                
+                        <tr>
+                            <td headers="dia">1</td>
+                            <td headers="tempmax">15.42</td>
+                            <td headers="tempmin">15.2</td>
+                            <td headers="humedad">58</td>
+                            <td headers="icono"><img src="http://openweathermap.org/img/w/01n.png" alt="Weather Icon"></td>
+                            <td headers="lluvia">0</td>
+                        </tr>
+                    
+                        <tr>
+                            <td headers="dia">2</td>
+                            <td headers="tempmax">15.09</td>
+                            <td headers="tempmin">14.87</td>
+                            <td headers="humedad">53</td>
+                            <td headers="icono"><img src="http://openweathermap.org/img/w/01n.png" alt="Weather Icon"></td>
+                            <td headers="lluvia">0</td>
+                        </tr>
+                    
+                        <tr>
+                            <td headers="dia">3</td>
+                            <td headers="tempmax">19.43</td>
+                            <td headers="tempmin">19.43</td>
+                            <td headers="humedad">33</td>
+                            <td headers="icono"><img src="http://openweathermap.org/img/w/01d.png" alt="Weather Icon"></td>
+                            <td headers="lluvia">0</td>
+                        </tr>
+                    
+                        <tr>
+                            <td headers="dia">4</td>
+                            <td headers="tempmax">25.42</td>
+                            <td headers="tempmin">25.42</td>
+                            <td headers="humedad">22</td>
+                            <td headers="icono"><img src="http://openweathermap.org/img/w/01d.png" alt="Weather Icon"></td>
+                            <td headers="lluvia">0</td>
+                        </tr>
+                    
+                        <tr>
+                            <td headers="dia">5</td>
+                            <td headers="tempmax">29.52</td>
+                            <td headers="tempmin">29.52</td>
+                            <td headers="humedad">15</td>
+                            <td headers="icono"><img src="http://openweathermap.org/img/w/01d.png" alt="Weather Icon"></td>
+                            <td headers="lluvia">0</td>
+                        </tr>
+                    </tbody></table></main></body></html>
