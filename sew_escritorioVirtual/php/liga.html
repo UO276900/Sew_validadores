@@ -1,0 +1,157 @@
+
+<!DOCTYPE HTML>
+<html lang="es"><head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/icon" href="multimedia/favicon.ico">
+    <title>Escritorio Virtual - Juegos</title>
+    <meta name="author" content="Adrian Estrada González">
+    <meta name="description" content="Mi liga de voleibol">
+    <meta name="keywords" content="liga, voleibol, clasificacion, jugadores, entrenadores, estadisticas, partidos, resultados">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../estilo/estilo.css">
+    <link rel="stylesheet" type="text/css" href="../estilo/liga.css">
+</head>
+<body>
+    <header>
+        <h1>Escritorio Virtual</h1>
+        <nav>
+            <ul>
+                <li><a tabindex="1" accesskey="I" href="../index.html">Inicio</a></li>
+                <li><a tabindex="2" accesskey="S" href="../sobremi.html">Sobre mi</a></li>
+                <li><a tabindex="3" accesskey="N" href="../noticias.html">Noticias</a></li>
+                <li><a tabindex="4" accesskey="A" href="../agenda.html">Agenda</a></li>
+                <li><a tabindex="5" accesskey="M" href="../meteorologia.html">Meteorología</a></li>
+                <li><a tabindex="6" accesskey="J" href="../juegos.html">Juegos</a></li>
+                <li><a tabindex="7" accesskey="V" href="../viajes.php">Viajes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Mi liga de Voleibol</h2>
+        <section>
+            <h3>Elige un juego</h3>
+            <ul>
+                <li><a href="../memoria.html">Juego de Memoria</a></li>
+                <li><a href="../sudoku.html">Sudoku</a></li>
+                <li><a href="../crucigrama.php">Crucigrama</a></li>
+                <li><a href="../api.html">ApiGame</a></li>
+                <li><a href="liga.php">Mi liga de Voleibol</a></li>
+            </ul>
+        </section>
+        <section>
+            <h3> Importar datos iniciales desde un CSV </h3>
+            <form action="#" method="post" enctype="multipart/form-data">
+            <label for="csvFile">Selecciona un archivo CSV:</label>
+            <input type="file" name="csvFile" id="csvFile" accept=".csv" required="">
+            <input type="submit" name="importarCSV" value="Importar">
+            </form>
+        </section>
+        <section>
+            <h3> Exportar datos actuales de la base de datos a un CSV </h3>
+            <form action="#" method="post">
+            <input type="submit" name="exportarCSV" value="Exportar">
+            </form>
+        </section>
+
+        <section>
+            <h3>Clasificacion</h3>
+            <table><tbody><tr>
+                <th scope="col" id="nombreEq">Equipo</th>
+                <th scope="col" id="ciudadEq">Ciudad</th>
+                <th scope="col" id="puntosEq">Puntos</th>
+            </tr><tr><td headers="nombreEq">CV Oviedo</td><td headers="ciudadEq">Oviedo</td><td headers="puntosEq">3</td></tr><tr><td headers="nombreEq">Galdakao</td><td headers="ciudadEq">Bilbao</td><td headers="puntosEq">0</td></tr><tr><td headers="nombreEq">VP Madrid</td><td headers="ciudadEq">Madrid</td><td headers="puntosEq">0</td></tr><tr><td headers="nombreEq">Rivas</td><td headers="ciudadEq">Madrid</td><td headers="puntosEq">0</td></tr><tr><td headers="nombreEq">Coslada</td><td headers="ciudadEq">Madrid</td><td headers="puntosEq">0</td></tr><tr><td headers="nombreEq">Chamartín</td><td headers="ciudadEq">Madrid</td><td headers="puntosEq">0</td></tr><tr><td headers="nombreEq">Burgas</td><td headers="ciudadEq">A Coruña</td><td headers="puntosEq">0</td></tr><tr><td headers="nombreEq">Parla</td><td headers="ciudadEq">Madrid</td><td headers="puntosEq">0</td></tr><tr><td headers="nombreEq">Arona</td><td headers="ciudadEq">Tenerife</td><td headers="puntosEq">0</td></tr><tr><td headers="nombreEq">CV Mostoles</td><td headers="ciudadEq">Madrid</td><td headers="puntosEq">0</td></tr><tr><td headers="nombreEq">Burgos</td><td headers="ciudadEq">Burgos</td><td headers="puntosEq">0</td></tr></tbody></table>        </section>
+        <section>
+            <h3>Plantillas</h3>
+            <form method="post" action="#">
+                <label for="verEquipo">Selecciona un equipo:</label>
+                <select name="verEquipo" id="verEquipo">
+                    <option value="">Selecciona un equipo</option>
+                    <option value="1">CV Oviedo</option><option value="2">Galdakao</option><option value="3">VP Madrid</option><option value="4">Rivas</option><option value="5">Coslada</option><option value="6">Chamartín</option><option value="7">Burgas</option><option value="8">Parla</option><option value="9">Arona</option><option value="10">CV Mostoles</option><option value="11">Burgos</option>                </select>
+                <input type="submit" name="verplantilla" value="Ver Plantilla">
+            </form>
+            <h4> Equipo: CV Oviedo</h4><table><caption>Jugadores</caption><tbody><tr>
+                        <th scope="col" id="nombreJug">Nombre</th>
+                        <th scope="col" id="apellidoJug">Apellido</th>
+                        <th scope="col" id="edadJug">Edad</th>
+                        <th scope="col" id="alturaJug">Altura</th>
+                        <th scope="col" id="posicionJug">Posición</th>
+                        <th scope="col" id="btEliminar">Eliminar</th>
+                    </tr><tr><td headers="nombreJug">Nicolas</td><td headers="apellidoJug">Navarro</td><td headers="edadJug">22</td><td headers="alturaJug">1.84</td><td headers="posicionJug">Central</td><td headers="btEliminar"><form method="post" action="#"><input type="hidden" name="idJugadorEliminar" value="1"><input type="submit" name="eliminarJugador" value="Eliminar"></form></td></tr><tr><td headers="nombreJug">Rafael</td><td headers="apellidoJug">Rodriguez</td><td headers="edadJug">23</td><td headers="alturaJug">1.78</td><td headers="posicionJug">Receptor</td><td headers="btEliminar"><form method="post" action="#"><input type="hidden" name="idJugadorEliminar" value="2"><input type="submit" name="eliminarJugador" value="Eliminar"></form></td></tr><tr><td headers="nombreJug">Pelayo</td><td headers="apellidoJug">Fernandez</td><td headers="edadJug">20</td><td headers="alturaJug">1.81</td><td headers="posicionJug">Central</td><td headers="btEliminar"><form method="post" action="#"><input type="hidden" name="idJugadorEliminar" value="3"><input type="submit" name="eliminarJugador" value="Eliminar"></form></td></tr><tr><td headers="nombreJug">Carlos</td><td headers="apellidoJug">Perez</td><td headers="edadJug">21</td><td headers="alturaJug">2.06</td><td headers="posicionJug">Central</td><td headers="btEliminar"><form method="post" action="#"><input type="hidden" name="idJugadorEliminar" value="4"><input type="submit" name="eliminarJugador" value="Eliminar"></form></td></tr><tr><td headers="nombreJug">Diego</td><td headers="apellidoJug">Morales</td><td headers="edadJug">15</td><td headers="alturaJug">1.74</td><td headers="posicionJug">Receptor</td><td headers="btEliminar"><form method="post" action="#"><input type="hidden" name="idJugadorEliminar" value="5"><input type="submit" name="eliminarJugador" value="Eliminar"></form></td></tr><tr><td headers="nombreJug">Alejandro</td><td headers="apellidoJug">Espinosa</td><td headers="edadJug">20</td><td headers="alturaJug">1.81</td><td headers="posicionJug">Central</td><td headers="btEliminar"><form method="post" action="#"><input type="hidden" name="idJugadorEliminar" value="6"><input type="submit" name="eliminarJugador" value="Eliminar"></form></td></tr><tr><td headers="nombreJug">Lucas</td><td headers="apellidoJug">Castro</td><td headers="edadJug">20</td><td headers="alturaJug">1.75</td><td headers="posicionJug">Libero</td><td headers="btEliminar"><form method="post" action="#"><input type="hidden" name="idJugadorEliminar" value="7"><input type="submit" name="eliminarJugador" value="Eliminar"></form></td></tr><tr><td headers="nombreJug">Alejandro</td><td headers="apellidoJug">Maguregui</td><td headers="edadJug">20</td><td headers="alturaJug">1.92</td><td headers="posicionJug">Colocador</td><td headers="btEliminar"><form method="post" action="#"><input type="hidden" name="idJugadorEliminar" value="8"><input type="submit" name="eliminarJugador" value="Eliminar"></form></td></tr><tr><td headers="nombreJug">Marcos</td><td headers="apellidoJug">Arguelles</td><td headers="edadJug">19</td><td headers="alturaJug">1.85</td><td headers="posicionJug">Opuesto</td><td headers="btEliminar"><form method="post" action="#"><input type="hidden" name="idJugadorEliminar" value="9"><input type="submit" name="eliminarJugador" value="Eliminar"></form></td></tr><tr><td headers="nombreJug">Mateo</td><td headers="apellidoJug">Rodriguez</td><td headers="edadJug">17</td><td headers="alturaJug">1.70</td><td headers="posicionJug">Libero</td><td headers="btEliminar"><form method="post" action="#"><input type="hidden" name="idJugadorEliminar" value="10"><input type="submit" name="eliminarJugador" value="Eliminar"></form></td></tr><tr><td headers="nombreJug">Diego</td><td headers="apellidoJug">Charro</td><td headers="edadJug">21</td><td headers="alturaJug">1.88</td><td headers="posicionJug">Central</td><td headers="btEliminar"><form method="post" action="#"><input type="hidden" name="idJugadorEliminar" value="11"><input type="submit" name="eliminarJugador" value="Eliminar"></form></td></tr><tr><td headers="nombreJug">Nicolas</td><td headers="apellidoJug">Nicolez</td><td headers="edadJug">15</td><td headers="alturaJug">1.73</td><td headers="posicionJug">Colocador</td><td headers="btEliminar"><form method="post" action="#"><input type="hidden" name="idJugadorEliminar" value="12"><input type="submit" name="eliminarJugador" value="Eliminar"></form></td></tr><tr><td headers="nombreJug">Pelayo</td><td headers="apellidoJug">Rodriguez</td><td headers="edadJug">20</td><td headers="alturaJug">1.78</td><td headers="posicionJug">Receptor</td><td headers="btEliminar"><form method="post" action="#"><input type="hidden" name="idJugadorEliminar" value="13"><input type="submit" name="eliminarJugador" value="Eliminar"></form></td></tr><tr><td headers="nombreJug">Santos</td><td headers="apellidoJug">Bravo</td><td headers="edadJug">21</td><td headers="alturaJug">1.82</td><td headers="posicionJug">Colocador</td><td headers="btEliminar"><form method="post" action="#"><input type="hidden" name="idJugadorEliminar" value="14"><input type="submit" name="eliminarJugador" value="Eliminar"></form></td></tr><tr><td headers="nombreJug">Samuel</td><td headers="apellidoJug">Mesa</td><td headers="edadJug">20</td><td headers="alturaJug">1.81</td><td headers="posicionJug">Opuesto</td><td headers="btEliminar"><form method="post" action="#"><input type="hidden" name="idJugadorEliminar" value="15"><input type="submit" name="eliminarJugador" value="Eliminar"></form></td></tr><tr><td headers="nombreJug">Javier</td><td headers="apellidoJug">Kelly</td><td headers="edadJug">22</td><td headers="alturaJug">1.86</td><td headers="posicionJug">Central</td><td headers="btEliminar"><form method="post" action="#"><input type="hidden" name="idJugadorEliminar" value="16"><input type="submit" name="eliminarJugador" value="Eliminar"></form></td></tr><tr><td headers="nombreJug">Jorge</td><td headers="apellidoJug">Jorginez</td><td headers="edadJug">17</td><td headers="alturaJug">1.73</td><td headers="posicionJug">Colocador</td><td headers="btEliminar"><form method="post" action="#"><input type="hidden" name="idJugadorEliminar" value="17"><input type="submit" name="eliminarJugador" value="Eliminar"></form></td></tr><tr><td headers="nombreJug">Adrian</td><td headers="apellidoJug">Estrada</td><td headers="edadJug">22</td><td headers="alturaJug">1.75</td><td headers="posicionJug">Receptor</td><td headers="btEliminar"><form method="post" action="#"><input type="hidden" name="idJugadorEliminar" value="18"><input type="submit" name="eliminarJugador" value="Eliminar"></form></td></tr></tbody></table><table><caption>Entrenador</caption><tbody><tr>
+                        <th scope="col" id="nombreEnt">Nombre</th>
+                        <th scope="col" id="apellidoEnt">Apellido</th>
+                        <th scope="col" id="edadEnt">Edad</th></tr><tr><td headers="nombreEnt">Maria</td><td headers="apellidoEnt">Corral</td><td headers="edadEnt">35</td></tr></tbody></table></section>        
+        <section>
+            <h3>Añadir Jugador</h3>
+            <form method="post" action="#">
+                <label for="equipoNuevoJugador">Equipo:</label>
+                <select name="equipoNuevoJugador" id="equipoNuevoJugador">
+                    <option value="">Selecciona un equipo</option>
+                    <option value="1">CV Oviedo</option><option value="2">Galdakao</option><option value="3">VP Madrid</option><option value="4">Rivas</option><option value="5">Coslada</option><option value="6">Chamartín</option><option value="7">Burgas</option><option value="8">Parla</option><option value="9">Arona</option><option value="10">CV Mostoles</option><option value="11">Burgos</option>                </select>
+                <label for="nombreNuevoJugador">Nombre:</label>
+                <input type="text" name="nombreNuevoJugador" id="nombreNuevoJugador" required="">
+                <label for="apellidoNuevoJugador">Apellido:</label>
+                <input type="text" name="apellidoNuevoJugador" id="apellidoNuevoJugador" required="">
+                <label for="edadNuevoJugador">Edad:</label>
+                <input type="number" name="edadNuevoJugador" id="edadNuevoJugador" required="">
+                <label for="alturaNuevoJugador">Altura:</label>
+                <input type="number" name="alturaNuevoJugador" id="alturaNuevoJugador" step="0.01" required="">
+                <label for="posicionNuevoJugador">Posición:</label>
+                <input type="text" name="posicionNuevoJugador" id="posicionNuevoJugador" required="">
+                <input type="submit" name="agregarJugador" value="Añadir Jugador">
+            </form>
+        </section>
+        <section>
+        <h3>Estadísticas individuales</h3>
+        <form method="post" action="#">
+            <label for="equipoSeleccionado">Selecciona un equipo:</label>
+            <select name="equipoSeleccionado" id="equipoSeleccionado" required="">
+                <option value="">Selecciona un equipo</option>
+                <option value="1">CV Oviedo</option><option value="2">Galdakao</option><option value="3">VP Madrid</option><option value="4">Rivas</option><option value="5">Coslada</option><option value="6">Chamartín</option><option value="7">Burgas</option><option value="8">Parla</option><option value="9">Arona</option><option value="10">CV Mostoles</option><option value="11">Burgos</option>            </select>
+            <input type="submit" name="cargarJugadores" value="Seleccionar">
+        </form>
+
+                </section>
+        <section>
+            <h3>Ver Estadísticas de Jugador</h3>
+
+            <form method="post" action="#">
+                <label for="jugadorSelec">Selecciona un jugador:</label>
+                <select name="jugadorSelec" id="jugadorSelec" required="">
+                    <option value="">Selecciona un jugador</option>
+                    <option value="1">Nicolas Navarro</option><option value="2">Rafael Rodriguez</option><option value="3">Pelayo Fernandez</option><option value="4">Carlos Perez</option><option value="5">Diego Morales</option><option value="6">Alejandro Espinosa</option><option value="7">Lucas Castro</option><option value="8">Alejandro Maguregui</option><option value="9">Marcos Arguelles</option><option value="10">Mateo Rodriguez</option><option value="11">Diego Charro</option><option value="12">Nicolas Nicolez</option><option value="13">Pelayo Rodriguez</option><option value="14">Santos Bravo</option><option value="15">Samuel Mesa</option><option value="16">Javier Kelly</option><option value="17">Jorge Jorginez</option><option value="18">Adrian Estrada</option><option value="19">Juan González</option><option value="20">Pedro Martínez</option><option value="21">Diego Gómez</option><option value="22">Carlos Sánchez</option><option value="23">Alberto Ortega</option><option value="24">Diego Rodríguez</option><option value="25">Miguel García</option><option value="26">Hugo Muñoz</option><option value="27">Javier Gómez</option><option value="28">Adrián Fernández</option><option value="29">Pablo Hernández</option><option value="30">Javier Fernández</option><option value="31">Alejandro Martínez</option><option value="32">Raúl Gómez</option><option value="33">Alberto Ortega</option><option value="34">Hugo Muñoz</option><option value="35">Gonzalo Fernández</option><option value="36">Jorge Jiménez</option><option value="37">Diego Rodríguez</option><option value="38">Sergio Gómez</option><option value="39">Ignacio Sánchez</option><option value="40">Miguel González</option><option value="41">Gonzalo Fernández</option><option value="42">Silvia Sánchez</option><option value="43">Javier Fernández</option><option value="44">Hugo Muñoz</option><option value="45">Laura Pérez</option><option value="46">Diego Rodríguez</option><option value="47">Adrián Fernández</option><option value="48">Miguel García</option><option value="49">Marcos Martínez</option><option value="50">Daniel Serrano</option><option value="51">Javier Fernández</option><option value="52">Luis González</option><option value="53">Jorge García</option><option value="54">Diego Rodríguez</option><option value="55">Adrián Fernández</option><option value="56">Hugo Muñoz</option><option value="57">Jorge Jiménez</option><option value="58">Marta Rodríguez</option><option value="59">Diego Hernández</option><option value="60">Ángel Serrano</option><option value="61">Alberto Martínez</option><option value="62">Raúl Gómez</option><option value="63">Jorge Jiménez</option><option value="64">Pablo Hernández</option><option value="65">Gonzalo Fernández</option><option value="66">Diego Rodríguez</option><option value="67">Adrián Fernández</option><option value="68">Miguel García</option><option value="69">Alejandro González</option><option value="70">Sergio Martínez</option><option value="71">David Fernández</option><option value="72">Laura Rodríguez</option><option value="73">Carlos Gómez</option><option value="74">Hugo Muñoz</option><option value="75">Gonzalo Fernández</option><option value="76">Jorge Jiménez</option><option value="77">Diego Rodríguez</option><option value="78">Adrián Fernández</option><option value="79">Ana González</option><option value="80">Pablo Martínez</option><option value="81">Carlos Fernández</option><option value="82">Laura Rodríguez</option><option value="83">Sergio Gómez</option><option value="84">Hugo Muñoz</option><option value="85">Gonzalo Fernández</option><option value="86">Jorge Jiménez</option><option value="87">Diego Rodríguez</option><option value="88">Adrián Fernández</option><option value="89">Miguel González</option><option value="90">Sergio Martínez</option><option value="91">Alberto Fernández</option><option value="92">Laura Rodríguez</option><option value="93">Carlos Gómez</option><option value="94">Hugo Muñoz</option><option value="95">Gonzalo Fernández</option><option value="96">Jorge Jiménez</option><option value="97">Diego Rodríguez</option><option value="98">Adrián Fernández</option><option value="99">Ana González</option><option value="100">Pablo Martínez</option><option value="101">Carlos Fernández</option><option value="102">Laura Rodríguez</option><option value="103">Sergio Gómez</option><option value="104">Hugo Muñoz</option><option value="105">Gonzalo Fernández</option><option value="106">Jorge Jiménez</option><option value="107">Diego Rodríguez</option><option value="108">Adrián Fernández</option>                </select>
+                <input type="submit" name="mostrarStats" value="Ver Estadísticas">
+            </form>
+
+                    </section>
+        <section>
+            <h3>Añadir Resultado</h3>
+            <form method="post" action="#">
+                <label for="fechaPartido">Fecha del Partido:</label>
+                <input type="date" name="fechaPartido" id="fechaPartido" required="">
+
+                <label for="lugarPartido">Lugar del Partido:</label>
+                <input type="text" name="lugarPartido" id="lugarPartido" required="">
+
+                <label for="equipoLocal">Equipo Local:</label>
+                <select name="equipoLocal" id="equipoLocal" required="">
+                    <option value="">Selecciona un equipo</option>
+                    <option value="1">CV Oviedo</option><option value="2">Galdakao</option><option value="3">VP Madrid</option><option value="4">Rivas</option><option value="5">Coslada</option><option value="6">Chamartín</option><option value="7">Burgas</option><option value="8">Parla</option><option value="9">Arona</option><option value="10">CV Mostoles</option><option value="11">Burgos</option>                </select>
+
+                <label for="equipoVisitante">Equipo Visitante:</label>
+                <select name="equipoVisitante" id="equipoVisitante" required="">
+                    <option value="">Selecciona un equipo</option>
+                    <option value="1">CV Oviedo</option><option value="2">Galdakao</option><option value="3">VP Madrid</option><option value="4">Rivas</option><option value="5">Coslada</option><option value="6">Chamartín</option><option value="7">Burgas</option><option value="8">Parla</option><option value="9">Arona</option><option value="10">CV Mostoles</option><option value="11">Burgos</option>                </select>
+
+                <label for="equipoGanador">Equipo Ganador:</label>
+                <select name="equipoGanador" id="equipoGanador" required="">
+                    <option value="">Selecciona un equipo</option>
+                    <option value="1">CV Oviedo</option><option value="2">Galdakao</option><option value="3">VP Madrid</option><option value="4">Rivas</option><option value="5">Coslada</option><option value="6">Chamartín</option><option value="7">Burgas</option><option value="8">Parla</option><option value="9">Arona</option><option value="10">CV Mostoles</option><option value="11">Burgos</option>                </select>
+
+                <input type="submit" name="agregarResultado" value="Añadir Resultado">
+            </form>
+        </section>
+    </main>
+
+
+</body></html>
