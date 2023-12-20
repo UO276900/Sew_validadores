@@ -1,0 +1,90 @@
+/* Adrian Estrada González UO276900 
+Font: arial, sans-serif Colores: (webaim) 
+Foreground : #141414 
+Background : #FFA384 */
+
+/* Especificidad: 001 */
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 3em;
+  }
+
+/* Especificidad: 001 */
+h3 {
+    font-size: 1.2em;
+    width: 100%;
+}
+
+
+/* Especificidad: 001 */
+h4 {
+    padding-top: 2em;
+    font-size: 1em;
+    width: 100%;
+}
+
+/* Especificidad: 001 */
+form {
+    max-width: 25em;
+    margin: 0 auto;
+    color: #141414; 
+    background-color: #ffffff; 
+    padding: 1.5em;
+    border-radius: 0.5em;
+  }
+  
+  /* Especificidad: 001 */
+  label {
+    display: block;
+    margin-bottom: 0.8em;
+  }
+  
+  /* Especificidad: 001 */
+  input {
+    width: 100%;
+    padding: 0.8em;
+    margin-bottom: 1.6em;
+    box-sizing: border-box;
+  }
+
+  /* Especificidad: 001 */
+  select {
+    width: 100%;
+    padding: 0.8em;
+    margin-bottom: 1.6em;
+    box-sizing: border-box;
+  }
+  
+  /* Especificidad: 011 */
+  input[type="submit"] {
+    background-color: #FFA384; 
+    color: #141414; 
+    cursor: pointer;
+    border: none;
+    padding: 0.5em;
+    border-radius: 0.4em;
+  }
+  
+  /* Especificidad: 021 */
+  input[type="submit"]:hover {
+    background-color: #FF8750; 
+    color: #141414; 
+  }
+
+  /* Especificidad: 011 */
+  input[name="eliminarJugador"] {
+    background-color: #000000; 
+    color: #FFFFFF; 
+    cursor: pointer;
+    border: none;
+    padding: 0.5em;
+    border-radius: 0.4em;
+  }
+  
+  /* Especificidad: 021 */
+  input[name="eliminarJugador"]:hover {
+    background-color: #200101; 
+    color: #FFFFFF; 
+  }
