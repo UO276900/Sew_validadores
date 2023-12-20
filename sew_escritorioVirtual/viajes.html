@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html lang="es"><head>
+ <!-- Datos que describen el documento -->
+ <meta charset="UTF-8">
+ <link rel="icon" type="image/icon" href="multimedia/favicon.ico">
+ <title> Escritorio Virtual - Viajes</title>
+ <meta name="author" content="Adrian Estrada González">
+ <meta name="description" content="Viajes">
+ <meta name="keywords" content="viajes, chile, santiago, carrusel, fotos, kml, svg, xml, rutas, hitos">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" type="text/css" href="estilo/estilo.css">
+ <link rel="stylesheet" type="text/css" href="estilo/viajes.css">
+ 
+ <script src="js/viajes.js"></script>
+ <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css" rel="stylesheet">
+ <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.js"></script>
+ 
+ <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+ <!-- Datos con el contenido que aparece en el navegador -->
+ <header>
+    <h1> Escritorio Virtual </h1>
+    <nav>
+        <ul>
+            <li><a tabindex="1" accesskey="I" href="index.html">Inicio</a></li>
+            <li><a tabindex="2" accesskey="S" href="sobremi.html">Sobre mi</a></li>
+            <li><a tabindex="3" accesskey="N" href="noticias.html">Noticias</a></li>
+            <li><a tabindex="4" accesskey="A" href="agenda.html">Agenda</a></li>
+            <li><a tabindex="5" accesskey="M" href="meteorologia.html">Meteorología</a></li>
+            <li><a tabindex="6" accesskey="J" href="juegos.html">Juegos</a></li>
+            <li><a tabindex="7" accesskey="V" href="viajes.php">Viajes</a></li>
+        </ul>
+    </nav>
+</header>
+<!-- 276900 mod 194 = 62 -> 62+1 = 63 (AMERICA - CHILE - SANTIAGO DE CHILE)-->
+<main>
+    <h2>Viajes</h2>
+    <article>
+        <h3> Carrusel de fotos </h3><img src="https://live.staticflickr.com/65535/53409424323_e204897c05_b.jpg" alt="Foto de Chile"><img src="https://live.staticflickr.com/65535/53409380279_6b3f06d706_b.jpg" alt="Foto de Chile"><img src="https://live.staticflickr.com/65535/53408122467_4a3f5ef566_b.jpg" alt="Foto de Chile"><img src="https://live.staticflickr.com/65535/53409222623_29d5a2abb3_b.jpg" alt="Foto de Chile"><img src="https://live.staticflickr.com/65535/53409222598_38f685029f_b.jpg" alt="Foto de Chile"><img src="https://live.staticflickr.com/65535/53407266537_38413ccff1_b.jpg" alt="Foto de Chile"><img src="https://live.staticflickr.com/65535/53407050702_f75ba5a9b9_b.jpg" alt="Foto de Chile"><img src="https://live.staticflickr.com/65535/53407973561_c1957fc869_b.jpg" alt="Foto de Chile"><img src="https://live.staticflickr.com/65535/53407973506_5b81f9513a_b.jpg" alt="Foto de Chile"><img src="https://live.staticflickr.com/65535/53408371340_ce6edf2d9c_b.jpg" alt="Foto de Chile">
+    <button data-action="next"> &gt; </button>
+    <button data-action="prev"> &lt; </button>
+    </article>
+    <section>
+        <h3> Cambio de moneda </h3><p>Cambio de Euros(EUR) a Pesos Chilenos(CLP): 962.379512</p><p>1 EUR equivale a 962.379512 CLP</p>
+    </section>
+    <section>
+        <h3> Mis mapas </h3>
+        <button onclick="viajes.getMapaEstaticoGoogle()" disabled=""> Mapa estático </button>
+        <button onclick="viajes.initMap()" disabled=""> Mapa dinámico </button>
+    </section>
+    <section>
+        <h3> Procesar XML </h3>
+        <label for="fileInput">Elige un archivo:</label>
+        <input type="file" id="fileInput" onchange="viajes.readInputFile()">
+    </section>
+    <section> 
+        <h3> Procesar archivos KML </h3>
+        <label for="fileInputKML">Elige un archivo:</label>
+        <input type="file" id="fileInputKML" onchange="viajes.generarMapaDinamicoConKML(this.files);" multiple="">
+    </section>
+    <section> 
+        <h3> Procesar archivos SVG </h3>
+        <label for="fileInputSVG">Elige un archivo:</label>
+        <input type="file" id="fileInputSVG" onchange="viajes.leerSVGs(this.files);" multiple="">
+    </section>
+    
+<section data-state="mapaestatico"><h3>Mi ubicación en mapa estático</h3><img src="https://maps.googleapis.com/maps/api/staticmap?center=43.368448,-5.6918016&amp;zoom=16&amp;size=400x300&amp;markers=color:red%7Clabel:S%7C43.368448,-5.6918016&amp;sensor=false&amp;key=AIzaSyBsWUH0aj9mmyO81Ma237xzuYb2aHQu3fk" alt="mapa estático google"></section><section data-state="mapadinamico" class="mapboxgl-map"><h3>Mi ubicación en mapa dinámico</h3><div class="mapboxgl-canary" style="visibility: hidden;"></div><div class="mapboxgl-canvas-container mapboxgl-interactive mapboxgl-touch-drag-pan mapboxgl-touch-zoom-rotate"><canvas class="mapboxgl-canvas" tabindex="0" aria-label="Map" role="region" width="400" height="300" style="width: 400px; height: 300px;"></canvas></div><div class="mapboxgl-control-container"><div class="mapboxgl-ctrl-top-left"></div><div class="mapboxgl-ctrl-top-right"></div><div class="mapboxgl-ctrl-bottom-left"><div class="mapboxgl-ctrl" style="display: block;"><a class="mapboxgl-ctrl-logo mapboxgl-compact" target="_blank" rel="noopener nofollow" href="https://www.mapbox.com/" aria-label="Mapbox logo"></a></div></div><div class="mapboxgl-ctrl-bottom-right"><div class="mapboxgl-ctrl mapboxgl-ctrl-attrib mapboxgl-compact"><button class="mapboxgl-ctrl-attrib-button" type="button" aria-label="Toggle attribution"><span class="mapboxgl-ctrl-icon" aria-hidden="true" title="Toggle attribution"></span></button><div class="mapboxgl-ctrl-attrib-inner"><a href="https://www.mapbox.com/about/maps/" target="_blank" title="Mapbox" aria-label="Mapbox">© Mapbox</a> <a class="mapbox-improve-map" href="https://apps.mapbox.com/feedback/?access_token=pk.eyJ1IjoiYWRyaWVzdHJhZGEiLCJhIjoiY2xxNzIzdXBkMHJnYjJycGFnOXZ1aWkyZCJ9.CZFnbYAvEiNoUAXS6Db8RQ#/-5.6918/43.3684/10" target="_blank" aria-label="Map feedback" rel="noopener nofollow">Improve this map</a> | <a href="https://www.mapbox.com/about/maps/" target="_blank" title="Mapbox" aria-label="Mapbox">© Mapbox</a> <a href="https://www.openstreetmap.org/about/" target="_blank" title="OpenStreetMap" aria-label="OpenStreetMap">© OpenStreetMap</a> <a class="mapbox-improve-map" href="https://www.mapbox.com/contribute/" target="_blank" title="Improve this map" aria-label="Improve this map">Improve this map</a></div></div></div></div></section><section> <h3> Rutas </h3><p> A continuación se muestran rutas turísticas para disfrutar en tus vacaciones por Santiago de Chile </p><section> <h4>Ruta por el Desierto de Atacama y sus playas</h4><ul> <li>Tipo: Paisajismo</li><li>Transporte: Coche</li><li>Fecha: 2030-10-30</li><li>Hora: 10:00:00</li><li>Duración: PT4H</li><li>Agencia: Sin agencia</li><li>Descripción: Si buscas escapar de la rutina, un viaje por la Región de Atacama es una excelente alternativa porque lo tiene todo: te sorprenderán sus hermosas playas, dunas y sitios históricos.Playa La Virgen de Caldera, conocida por su arena blanca y aguas color turquesa.Este lugar, en medio del desierto, es ideal para ver el fenómeno conocido como Desierto Florido.Después de tomar desayuno en la Playa la Virgen, te desplazarás por el Circuito Costero rumbo al Parque Llanos de Challe, otro lugar ideal para ver el Desierto Florido.</li><li>Personas: Se puede ir con niños, para todas las edades</li><li>Inicio:<ul> <li>Lugar de inicio: Bahía Inglesa</li><li>Dirección de inicio: Atacama, Chile</li><li>Coordenadas de inicio:<ul> <li>Longitud: -27.751</li><li>Latitud: -70.866</li><li>Altitud: 10</li></ul></li></ul></li><li>Referencias:<ul> <li> <a href="https://es.wikipedia.org/wiki/Bah%C3%ADa_Inglesa_(Chile)">Referencia 1</a></li><li> <a href="https://www.google.es/maps/place/Bahia+Inglesa/@-27.1008749,-70.8642584,16.25z/data=!4m19!1m12!4m11!1m3!2m2!1d-70.8572033!2d-27.1029389!1m6!1m2!1s0x96bd6856129c13f9:0xc84b062fbb270021!2sBahia+Inglesa,+Atacama,+Chile!2m2!1d-70.8573022!2d-27.1032796!3m5!1s0x96bd6856129c13f9:0xc84b062fbb270021!8m2!3d-27.1032796!4d-70.8573022!16s%2Fg%2F11byl53jg8?entry=ttu">Referencia 2</a></li><li> <a href="https://chileestuyo.cl/desierto-y-playas-en-atacama/">Referencia 3</a></li></ul></li><li>Recomendación: 8</li><li>Hitos:<ul> 
+                            <li>Nombre: Playa la Virgen y Mar de Dunas 
+                                <ul>                                   
+                                    <li>Descripción: Playa La Virgen de Caldera, conocida por su arena blanca y aguas color turquesa. </li>
+                                    <li>Coordenadas: -27.089601, -70.848392, 25 </li>
+                                    <li>Distancia anterior: 10 </li>
+                                    <li>Galería de Fotografías:<ul> <li> <img src="multimedia/Bahia_Inglesa,Chile.jpg" alt="Bahia_Inglesa,Chile.jpg"></li></ul></li>
+                                </ul> 
+                            </li>
+                            <li>Nombre: Parque Nacional Pan de Azúcar 
+                                <ul>                                   
+                                    <li>Descripción: Este lugar, en medio del desierto, es ideal para ver el fenómeno conocido como Desierto Florido. </li>
+                                    <li>Coordenadas: -26.149722, -70.650556, 65 </li>
+                                    <li>Distancia anterior: 128 </li>
+                                    <li>Galería de Fotografías:<ul> <li> <img src="multimedia/mardunas.jpg" alt="mardunas.jpg"></li></ul></li>
+                                </ul> 
+                            </li>
+                            <li>Nombre: Llanos de Challe y olivos centenarios 
+                                <ul>                                   
+                                    <li>Descripción: Después de tomar desayuno en la Playa la Virgen, te desplazarás por el Circuito Costero rumbo al Parque Llanos de Challe, otro lugar ideal para ver el Desierto Florido. </li>
+                                    <li>Coordenadas: -28.158813, -71.161476, 8 </li>
+                                    <li>Distancia anterior: 155 </li>
+                                    <li>Galería de Fotografías:<ul> <li> <img src="multimedia/llanos.jpg" alt="llanos.jpg"></li></ul></li>
+                                </ul> 
+                            </li></ul></li></ul></section><section> <h4>Ruta por el Centro Histórico</h4><ul> <li>Tipo: Cultural</li><li>Transporte: A pie</li><li>Fecha: 2030-10-31</li><li>Hora: 09:00:00</li><li>Duración: PT6H</li><li>Agencia: Sin agencia</li><li>Descripción: Además de pasear por sus jardines, desde lo más alto donde está situado el famoso castillo de Hidalgo podréis disfrutar de una de las mejores vistas a la ciudad, con una panorámica general hacia la cordillera y el cerro San Cristóbal.Se trata de un edificio muy revelador en cuanto a numerosos acontecimientos relacionados con la dictadura del General PinochetAdemás de la famosa estatua ecuestre de Pedro Valdivia, en la plaza podréis visitar algunos de los edificios más importantes de la ciudad, como el edificio de Correos de Chile y el Museo Histórico Nacional.Los amantes de la historia antigua podéis visitar el Museo Chileno de Arte Precolombino, una joya que alberga numerosas colecciones relacionadas con la diversidad cultural americana, donde destaca su valiosa exposición textil andina con piezas de más de 3.000 años de antigüedad.</li><li>Personas: Se puede ir con niños, para todas las edades</li><li>Inicio:<ul> <li>Lugar de inicio: Cerro de Santa Lucía</li><li>Dirección de inicio: Plaza Pedro de Valdibia, Chile</li><li>Coordenadas de inicio:<ul> <li>Longitud: -33.440192</li><li>Latitud: -70.643285</li><li>Altitud: 629</li></ul></li></ul></li><li>Referencias:<ul> <li> <a href="https://es.wikipedia.org/wiki/Cerro_Santa_Luc%C3%ADa#:~:text=Tiene%20una%20altitud%20de%20629,una%20superficie%20de%2065300%20m%C2%B2.">Referencia 1</a></li><li> <a href="https://pasaportenomada.es/que-ver-en-santiago-de-chile-en-2-dias/">Referencia 2</a></li><li> <a href="https://es.wikiloc.com/rutas-a-pie/centro-de-santiago-de-chile-15358953">Referencia 3</a></li></ul></li><li>Recomendación: 7</li><li>Hitos:<ul> 
+                            <li>Nombre: Barrio Paris - Londres y Palacio de la Moneda 
+                                <ul>                                   
+                                    <li>Descripción: Se trata de un edificio muy revelador en cuanto a numerosos acontecimientos relacionados con la dictadura del General Pinochet </li>
+                                    <li>Coordenadas: -33.442883, -70.653852, 550 </li>
+                                    <li>Distancia anterior: 1.02 </li>
+                                    <li>Galería de Fotografías:<ul> <li> <img src="multimedia/moneda.jpg" alt="moneda.jpg"></li></ul></li>
+                                </ul> 
+                            </li>
+                            <li>Nombre: Plaza de Armas 
+                                <ul>                                   
+                                    <li>Descripción: Además de la famosa estatua ecuestre de Pedro Valdivia, en la plaza podréis visitar algunos de los edificios más importantes de la ciudad, como el edificio de Correos de Chile y el Museo Histórico Nacional. </li>
+                                    <li>Coordenadas: -33.437763, -70.650517, 560 </li>
+                                    <li>Distancia anterior: 1.67 </li>
+                                    <li>Galería de Fotografías:<ul> <li> <img src="multimedia/armas.jpg" alt="armas.jpg"></li></ul></li>
+                                </ul> 
+                            </li>
+                            <li>Nombre: Lastarria, el barrio bohemio de la ciudad 
+                                <ul>                                   
+                                    <li>Descripción: Los amantes de la historia antigua podéis visitar el Museo Chileno de Arte Precolombino, una joya que alberga numerosas colecciones relacionadas con la diversidad cultural americana, donde destaca su valiosa exposición textil andina con piezas de más de 3.000 años de antigüedad. </li>
+                                    <li>Coordenadas: -33.438102, -70.641079, 588 </li>
+                                    <li>Distancia anterior: 2.54 </li>
+                                    <li>Galería de Fotografías:<ul> <li> <img src="multimedia/Lastarria.jpg" alt="Lastarria.jpg"></li></ul></li>
+                                </ul> 
+                            </li></ul></li></ul></section><section> <h4>Excursión a la Cordillera de los Andes</h4><ul> <li>Tipo: Montañismo</li><li>Transporte: A pie</li><li>Fecha: 2030-11-02</li><li>Hora: 09:00:00</li><li>Duración: PT12H</li><li>Agencia: Sin agencia</li><li>Descripción: Esta emocionante excursión te lleva desde la bulliciosa ciudad de Santiago hasta la majestuosa Cordillera de los Andes, una cadena montañosa imponente que ofrece vistas panorámicas y experiencias únicasTermas Valle de Colina te invita a disfrutar de sus aguas termales 100% naturales a 109 km de Santiago, en pleno corazón de la Cordillera de los AndesEl embalse El Yeso es una reserva artificial de agua acumulada mediante una represa ubicado en la cordillera de los Andes.Valle Nevado es un centro de esquí ubicado en Farellones a 64 kilómetros al oriente de Santiago, la capital de Chile.</li><li>Personas: A partir de 14 años, dificultad media</li><li>Inicio:<ul> <li>Lugar de inicio: Pueblo El Volcán</li><li>Dirección de inicio: San José de Maipo, Chile</li><li>Coordenadas de inicio:<ul> <li>Longitud: -33.4848</li><li>Latitud: -70.1001</li><li>Altitud: 1516</li></ul></li></ul></li><li>Referencias:<ul> <li> <a href="https://www.viator.com/es-ES/collections/Andes-Mountains-Tours-from-Mendoza/c11628">Referencia 1</a></li><li> <a href="https://es.wikipedia.org/wiki/Embalse_El_Yeso#:~:text=El%20embalse%20se%20encuentra%20en,Cordillera%2C%20Regi%C3%B3n%20Metropolitana%20de%20Santiago.">Referencia 2</a></li><li> <a href="https://www.visitchile.com/es/tours/dia-en-la-cordillera-de-los-andes-volcan/">Referencia 3</a></li></ul></li><li>Recomendación: 10</li><li>Hitos:<ul> 
+                            <li>Nombre: Termas Valle de Colina 
+                                <ul>                                   
+                                    <li>Descripción: Termas Valle de Colina te invita a disfrutar de sus aguas termales 100% naturales a 109 km de Santiago, en pleno corazón de la Cordillera de los Andes </li>
+                                    <li>Coordenadas: -33.849989, -69.982051, 2606 </li>
+                                    <li>Distancia anterior: 22.4 </li>
+                                    <li>Galería de Fotografías:<ul> <li> <img src="multimedia/termas.jpg" alt="termas.jpg"></li></ul></li>
+                                </ul> 
+                            </li>
+                            <li>Nombre: Embalse El Yeso 
+                                <ul>                                   
+                                    <li>Descripción: El embalse El Yeso es una reserva artificial de agua acumulada mediante una represa ubicado en la cordillera de los Andes. </li>
+                                    <li>Coordenadas: -33.65, -70.066667, 2605 </li>
+                                    <li>Distancia anterior: 55.6 </li>
+                                    <li>Galería de Fotografías:<ul> <li> <img src="multimedia/elyeso.jpg" alt="elyeso.jpg"></li></ul></li>
+                                </ul> 
+                            </li>
+                            <li>Nombre: Valle Nevado 
+                                <ul>                                   
+                                    <li>Descripción: Valle Nevado es un centro de esquí ubicado en Farellones a 64 kilómetros al oriente de Santiago, la capital de Chile. </li>
+                                    <li>Coordenadas: -33.3241155, -70.256665, 3500 </li>
+                                    <li>Distancia anterior: 151 </li>
+                                    <li>Galería de Fotografías:<ul> <li> <img src="multimedia/vnevado.jpg" alt="vnevado.jpg"></li></ul></li>
+                                </ul> 
+                            </li></ul></li></ul></section></section><section data-state="mapadinamico" class="mapboxgl-map"><h3>Mapa con Coordenadas KML</h3><div class="mapboxgl-canary" style="visibility: hidden;"></div><div class="mapboxgl-canvas-container mapboxgl-interactive mapboxgl-touch-drag-pan mapboxgl-touch-zoom-rotate"><canvas class="mapboxgl-canvas" tabindex="0" aria-label="Map" role="region" width="400" height="300" style="width: 400px; height: 300px;"></canvas></div><div class="mapboxgl-control-container"><div class="mapboxgl-ctrl-top-left"></div><div class="mapboxgl-ctrl-top-right"></div><div class="mapboxgl-ctrl-bottom-left"><div class="mapboxgl-ctrl" style="display: block;"><a class="mapboxgl-ctrl-logo mapboxgl-compact" target="_blank" rel="noopener nofollow" href="https://www.mapbox.com/" aria-label="Mapbox logo"></a></div></div><div class="mapboxgl-ctrl-bottom-right"><div class="mapboxgl-ctrl mapboxgl-ctrl-attrib mapboxgl-compact"><button class="mapboxgl-ctrl-attrib-button" type="button" aria-label="Toggle attribution"><span class="mapboxgl-ctrl-icon" aria-hidden="true" title="Toggle attribution"></span></button><div class="mapboxgl-ctrl-attrib-inner"><a href="https://www.mapbox.com/about/maps/" target="_blank" title="Mapbox" aria-label="Mapbox">© Mapbox</a> <a class="mapbox-improve-map" href="https://apps.mapbox.com/feedback/?access_token=pk.eyJ1IjoiYWRyaWVzdHJhZGEiLCJhIjoiY2xxNzIzdXBkMHJnYjJycGFnOXZ1aWkyZCJ9.CZFnbYAvEiNoUAXS6Db8RQ#/-70.6483/-33.4569/10" target="_blank" aria-label="Map feedback" rel="noopener nofollow">Improve this map</a> | <a href="https://www.mapbox.com/about/maps/" target="_blank" title="Mapbox" aria-label="Mapbox">© Mapbox</a> <a href="https://www.openstreetmap.org/about/" target="_blank" title="OpenStreetMap" aria-label="OpenStreetMap">© OpenStreetMap</a> <a class="mapbox-improve-map" href="https://www.mapbox.com/contribute/" target="_blank" title="Improve this map" aria-label="Improve this map">Improve this map</a></div></div></div></div></section><section data-state="svg"> <h3> Altimetria SVG: 1 </h3><svg xmlns="http://www.w3.org/2000/svg">
+ <polyline points="50,490 50,350.0 60.0,450.0 188.0,370.0 343.0,484.0 343.0,490 50,490" stroke="black" fill="none"></polyline>
+</svg></section><section data-state="svg"> <h3> Altimetria SVG: 2 </h3><svg xmlns="http://www.w3.org/2000/svg">
+ <polyline points="50,490 50,440.2 60.2,445.0 76.9,444.0 102.30000000000001,441.2 102.30000000000001,490 50,490" stroke="black" fill="none"></polyline>
+</svg></section><section data-state="svg"> <h3> Altimetria SVG: 3 </h3><svg xmlns="http://www.w3.org/2000/svg">
+ <polyline points="50,490 50,149.0 72.4,239.39999999999998 128.0,239.5 279.0,150.0 279.0,490 50,490" stroke="black" fill="none"></polyline>
+</svg></section></main>
+<script>
+    var viajes = new Viajes();
+</script>
+
+
+
+</body></html>
+
