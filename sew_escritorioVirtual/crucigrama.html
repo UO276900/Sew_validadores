@@ -1,0 +1,109 @@
+
+<!DOCTYPE HTML>
+<html lang="es"><head>
+    <!-- Datos que describen el documento -->
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/icon" href="multimedia/favicon.ico">
+    <title> Escritorio Virtual - Juegos</title>
+    <meta name="author" content="Adrian Estrada González">
+    <meta name="description" content="Crucigrama">
+    <meta name="keywords" content="juego, crucigrama, matematicas, operaciones">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estilo/estilo.css">
+    <link rel="stylesheet" type="text/css" href="estilo/crucigrama.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="js/crucigrama.js"> </script>
+</head>
+
+<body>
+    <!-- Datos con el contenido que aparece en el navegador -->
+    <header>
+        <h1> Escritorio Virtual </h1>
+        <nav>
+        <ul>
+            <li><a tabindex="1" accesskey="I" href="index.html">Inicio</a></li>
+            <li><a tabindex="2" accesskey="S" href="sobremi.html">Sobre mi</a></li>
+            <li><a tabindex="3" accesskey="N" href="noticias.html">Noticias</a></li>
+            <li><a tabindex="4" accesskey="A" href="agenda.html">Agenda</a></li>
+            <li><a tabindex="5" accesskey="M" href="meteorologia.html">Meteorología</a></li>
+            <li><a tabindex="6" accesskey="J" href="juegos.html">Juegos</a></li>
+            <li><a tabindex="7" accesskey="V" href="viajes.php">Viajes</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <main>
+        <h2> Crucigrama </h2>
+        <section>
+            <h3>Elige un juego</h3>
+            <ul>
+                <li><a href="memoria.html">Juego de Memoria</a></li>
+                <li><a href="sudoku.html">Sudoku</a></li>
+                <li><a href="crucigrama.php">Crucigrama</a></li>
+                <li><a href="api.html">ApiGame</a></li>
+                <li><a href="php/liga.php"> Mi liga de Voleibol </a></li>
+            </ul>
+        </section>
+        <section>
+            <h3>Instrucciones</h3>
+            <ol>
+                <li> Selecciona una casilla </li>
+                <li> Introduce un número del 0 al 9 o un operador (*,/,+,-) </li>
+                <li> El operador + se corresponde con la suma </li>
+                <li> El operador - se corresponde con la resta </li>
+                <li> El operador * se corresponde con la multiplicación </li>
+                <li> El operador / se corresponde con la división entera </li>
+                <li> ¡Completa todas las operaciones en filas y columnas para ganar! </li>
+                <li> Cuando completes el crucigrama, puedes rellenar el formulario de abajo para ver los mejores tiempos del nivel </li>
+            </ol>
+        </section>
+        <section data-type="botonera">
+            <h3>Botonera</h3>
+            <button onclick="crucigrama.introduceElement(1)">1</button>
+            <button onclick="crucigrama.introduceElement(2)">2</button>
+            <button onclick="crucigrama.introduceElement(3)">3</button>
+            <button onclick="crucigrama.introduceElement(4)">4</button>
+            <button onclick="crucigrama.introduceElement(5)">5</button>
+            <button onclick="crucigrama.introduceElement(6)">6</button>
+            <button onclick="crucigrama.introduceElement(7)">7</button>
+            <button onclick="crucigrama.introduceElement(8)">8</button>
+            <button onclick="crucigrama.introduceElement(9)">9</button>
+            <button onclick="crucigrama.introduceElement(&quot;*&quot;)">x</button>
+            <button onclick="crucigrama.introduceElement(&quot;+&quot;)">+</button>
+            <button onclick="crucigrama.introduceElement(&quot;-&quot;)">-</button>
+            <button onclick="crucigrama.introduceElement(&quot;/&quot;)">/</button>
+        </section>
+        <section>
+            <h3> Top 10 - Records  </h3>
+            <ol><li>Lucas Santamarina - 00:00:16</li><li>Adrian Estrada - 00:00:18</li><li>Adrian Estrada - 00:00:19</li><li>Adrian Estrada - 00:00:21</li><li>Adrian Estrada - 00:00:27</li><li>Adrian Estrada - 00:00:42</li><li>Lucas Martinez - 00:00:56</li><li>Ruben  Castro - 00:01:10</li></ol>
+        </section>
+    <section><h3>Resultados</h3><form action="#" method="post"><label for="nombreInput">Nombre</label><input type="text" name="nombre" id="nombreInput"><label for="apellidosInput">Apellidos</label><input type="text" name="apellidos" id="apellidosInput"><label for="nivelInput">Nivel</label><input type="text" name="nivel" id="nivelInput" value="facil" readonly="readonly"><label for="tiempoInput">Tiempo</label><input type="text" name="tiempo" id="tiempoInput" value="00:00:29" readonly="readonly"><input type="submit" name="insertar_registro" value="Guardar Record"></form></section></main>
+
+    <script>
+        var crucigrama = new Crucigrama('facil');
+        crucigrama.paintMathword();
+
+        document.addEventListener('keydown', function (event) {
+
+            if (!crucigrama.gameActive) {
+                return;
+            }
+
+            var clickedCell = $('p[data-state="clicked"]');
+
+            if (clickedCell.length > 0) {
+                const key = event.key;
+                if ((key >= '0' && key <= '9') || ['+', '-', '*', '/'].includes(key)) {
+                    crucigrama.introduceElement(key);
+                }
+            }
+            else {
+                alert('Por favor, selecciona una celda antes de pulsar cualquier tecla.');
+            }
+
+        });
+    </script>
+
+
+
+</body></html>
