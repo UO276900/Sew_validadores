@@ -8,6 +8,8 @@ Background : #FFA384 */
    display: grid;
    grid-template-columns: repeat(9, 1fr);
    grid-template-rows: repeat(10, 1fr);
+   width: 50em;
+   height: 50em;
    gap: 0em;
    justify-content: center;
    margin: 3em;
