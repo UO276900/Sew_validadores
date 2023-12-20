@@ -102,24 +102,7 @@
             <input type="submit" name="cargarJugadores" value="Seleccionar">
         </form>
 
-                    <form method="post" action="#">
-                <label for="jugadorSeleccionado">Selecciona un jugador:</label>
-                <select name="jugadorSeleccionado" id="jugadorSeleccionado" required="">
-                    <option value="">Selecciona un jugador</option>
-                    <option value="19">Juan González</option><option value="20">Pedro Martínez</option><option value="21">Diego Gómez</option><option value="22">Carlos Sánchez</option><option value="23">Alberto Ortega</option><option value="24">Diego Rodríguez</option><option value="25">Miguel García</option><option value="26">Hugo Muñoz</option><option value="27">Javier Gómez</option><option value="28">Adrián Fernández</option>                </select>
-
-                <label for="puntos">Número de puntos:</label>
-                <input type="number" name="puntos" id="puntos" required="">
-
-                <label for="bloqueos">Número de bloqueos:</label>
-                <input type="number" name="bloqueos" id="bloqueos" required="">
-
-                <label for="ataquesExitosos">Número de ataques exitosos:</label>
-                <input type="number" name="ataquesExitosos" id="ataquesExitosos" required="">
-
-                <input type="submit" name="guardarStats" value="Guardar Estadísticas">
-            </form>
-                    </section>
+                </section>
         <section>
             <h3>Ver Estadísticas de Jugador</h3>
 
@@ -131,7 +114,12 @@
                 <input type="submit" name="mostrarStats" value="Ver Estadísticas">
             </form>
 
-                    </section>
+            <h4>Estadísticas de Pelayo Rodriguez:</h4><table><caption> Estadisticas personales </caption>
+                          <tbody><tr>
+                            <th scope="col" id="puntos">Puntos</th>
+                            <th scope="col" id="bloqueos">Bloqueos</th>
+                            <th scope="col" id="ataques">Ataques Exitosos</th>
+                          </tr><tr><td headers="puntos">11</td><td headers="bloqueos">12</td><td headers="ataques">33</td></tr></tbody></table>        </section>
         <section>
             <h3>Añadir Resultado</h3>
             <form method="post" action="#">
