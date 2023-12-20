@@ -1,0 +1,169 @@
+/* Adrian Estrada González UO276900 
+Font: arial, sans-serif Colores: (webaim) 
+Foreground : #141414 
+Background : #FFA384 */
+
+/* Especificidad: 012 */
+main section:nth-child(4){
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  gap: 0em;
+  justify-content: center;
+  margin: 3em;
+  box-shadow: 0 0 2em #0000001a;
+
+}
+
+
+/* Especificidad: 001 */
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 3em;
+}
+
+
+/* Especificidad: 002 */
+main h2 {
+  color: #333;
+  background-color: #ffffff;
+  border-bottom: 0.2em solid #333;
+  padding-bottom: 2em;
+  margin-bottom: 4em;
+}
+
+/* Especificidad: 001 */
+p {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  border: 0.1em solid #000;
+  cursor: pointer;
+}
+
+/* Especificidad: 011 */
+p[data-state="blocked"] {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Especificidad: 011 */
+p[data-state="clicked"] {
+  background-color: #FFA384; 
+  color: #000000;
+}
+
+/* Especificidad: 011 */
+p[data-state="empty"] {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Especificidad: 001 */
+form {
+  margin: 0 auto;
+  color: #141414; 
+  background-color: #ffffff; 
+  padding: 1.5em;
+  border-radius: 0.5em;
+}
+
+/* Especificidad: 001 */
+label {
+  display: block;
+  margin-bottom: 0.8em;
+}
+
+/* Especificidad: 001 */
+input {
+  width: 100%;
+  padding: 0.8em;
+  margin-bottom: 1.6em;
+  box-sizing: border-box;
+}
+
+/* Especificidad: 011 */
+input[type="submit"] {
+  background-color: #FFA384; 
+  color: #141414; 
+  cursor: pointer;
+  border: none;
+  padding: 0.5em;
+  border-radius: 0.4em;
+}
+
+/* Especificidad: 021 */
+input[type="submit"]:hover {
+  background-color: #FF8750; 
+  color: #141414; 
+}
+
+/* Especificidad: 001 */
+h3 {
+  grid-column: 1/10;
+  font-size: 1.2em;
+  width: 100%;
+}
+
+/* Especificidad: 012 */
+main section:nth-child(6) {
+  padding: 1em;
+  border-radius: 0.5em;
+  margin-top: 1em;
+}
+
+/* Especificidad: 013 */
+main section:nth-child(6) h3 {
+  margin-bottom: 0.5em;
+}
+
+/* Especificidad: 013 */
+main section:nth-child(6) li {
+  margin-bottom: 0.5em;
+}
+
+/* Especificidad: 023 */
+main section:nth-child(6) li:nth-child(odd) {
+  background-color: #FFA384;
+  color: #141414;
+  padding: 0.3em;
+  border-radius: 0.3em;
+}
+
+/* Especificidad: 023 */
+main section:nth-child(6) li:nth-child(even) {
+  background-color: #FFE0B2;
+  color: #141414;
+  padding: 0.3em;
+  border-radius: 0.3em;
+}
+
+/* Especificidad: 011 */
+section[data-type=botonera] {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Especificidad: 012 */
+section[data-type=botonera] h3 {
+  width: 100%;
+  text-align: center;
+}
+
+/* Especificidad: 012 */
+section[data-type=botonera] button {
+  width: calc(15% - 1em);
+  height: 4em;
+  text-align: center;
+  background-color: #000;
+  color: #FFF;
+}
+
+
