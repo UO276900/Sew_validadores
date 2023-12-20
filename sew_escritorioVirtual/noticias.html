@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="es">
+
+<head>
+    <!-- Datos que describen el documento -->
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/icon" href="multimedia/favicon.ico">
+    <title> Escritorio Virtual - Noticias</title>
+    <meta name="author" content="Adrian Estrada González" />
+    <meta name="description" content="Noticias" />
+    <meta name="keywords" content="noticia, suceso, autor, titular, entrada, entradilla, texto" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/noticias.css" />
+    <script src="js/noticias.js"> </script>
+</head>
+
+<body>
+    <!-- Datos con el contenido que aparece en el navegador -->
+    <header>
+        <h1> Escritorio Virtual </h1>
+        <nav>
+            <ul>
+                <li><a tabindex="1" accesskey="I" href="index.html">Inicio</a></li>
+                <li><a tabindex="2" accesskey="S" href="sobremi.html">Sobre mi</a></li>
+                <li><a tabindex="3" accesskey="N" href="noticias.html">Noticias</a></li>
+                <li><a tabindex="4" accesskey="A" href="agenda.html">Agenda</a></li>
+                <li><a tabindex="5" accesskey="M" href="meteorologia.html">Meteorología</a></li>
+                <li><a tabindex="6" accesskey="J" href="juegos.html">Juegos</a></li>
+                <li><a tabindex="7" accesskey="V" href="viajes.php">Viajes</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2> Noticias </h2>
+        <label for="fileInput">Elige un fichero:</label>
+        <input type="file" id="fileInput" onchange="noticias.readInputFile()">
+        <section>
+            <h3> Nueva noticia </h3>
+        
+            <label for="titular">Titular:</label>
+            <input type="text" id="titular">
+        
+            <label for="entradilla">Entradilla:</label>
+            <textarea id="entradilla"></textarea>
+        
+            <label for="texto">Texto:</label>
+            <textarea id="texto"></textarea>
+        
+            <label for="autor">Autor:</label>
+            <input type="text" id="autor">
+        
+            <button onclick="noticias.agregarNoticiaDesdeFormulario()">Agregar Noticia</button>
+        </section>
+    </main>
+
+    <script>
+        var noticias = new Noticias();
+    </script>
+</body>
+
+</html>

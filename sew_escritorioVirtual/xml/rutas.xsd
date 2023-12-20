@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<xs:schema xmlns="http://tempuri.org/rutas" elementFormDefault="qualified" targetNamespace="http://tempuri.org/rutas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="rutas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="3" maxOccurs="unbounded" ref="ruta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ruta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="nombre" />
+        <xs:element ref="tipo" />
+        <xs:element ref="transporte" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="fecha" />
+        <xs:element minOccurs="0" maxOccurs="1" ref="hora" />
+        <xs:element ref="duracion" />
+        <xs:element ref="agencia" />
+        <xs:element ref="descripcion" />
+        <xs:element ref="personas" />
+        <xs:element ref="inicio" />
+        <xs:element ref="referencias" />
+        <xs:element ref="recomendacion" />
+        <xs:element ref="hitos" />
+      </xs:sequence>
+      <xs:attribute name="fecha" type="xs:date" />
+      <xs:attribute name="hora" type="xs:time" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="nombre" type="xs:string" />
+  <xs:element name="tipo" type="xs:string" />
+  <xs:element name="transporte" type="xs:string" />
+  <xs:element name="fecha" type="xs:string" />
+  <xs:element name="hora" type="xs:string" />
+  <xs:element name="duracion" type="xs:duration" />
+  <xs:element name="agencia" type="xs:string" />
+  <xs:element name="descripcion" type="xs:string" />
+  <xs:element name="personas" type="xs:string" />
+  <xs:element name="inicio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="lugar" />
+        <xs:element ref="direccion" />
+        <xs:element ref="coordenadas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="lugar" type="xs:string" />
+  <xs:element name="direccion" type="xs:string" />
+  <xs:element name="coordenadas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="longitud" />
+        <xs:element ref="latitud" />
+        <xs:element ref="altitud" />
+      </xs:sequence>
+      <xs:attribute name="longitud" type="xs:float" />
+      <xs:attribute name="latitud" type="xs:float" />
+      <xs:attribute name="altitud" type="xs:float" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="longitud" type="xs:float" />
+  <xs:element name="latitud" type="xs:float" />
+  <xs:element name="altitud" type="xs:float" />
+  <xs:element name="referencias">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="3" maxOccurs="unbounded" ref="referencia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="referencia" type="xs:string" />
+  <xs:element name="recomendacion" type="xs:integer" />
+  <xs:element name="hitos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="3" maxOccurs="unbounded" ref="hito" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="hito">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="nombre" />
+        <xs:element ref="descripcion" />
+        <xs:element ref="coordenadas" />
+        <xs:element ref="distancia_anterior" />
+        <xs:element ref="galeria_fotografias" />
+        <xs:element minOccurs="0" maxOccurs="3" ref="galeria_videos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="galeria_fotografias">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="5" ref="fotografia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="distancia_anterior">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="unidades" />
+      </xs:sequence>
+      <xs:attribute name="unidades" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="unidades" type="xs:string" />
+  <xs:element name="fotografia" type="xs:string" />
+  <xs:element name="galeria_videos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" ref="video" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="video" type="xs:string" />
+</xs:schema>

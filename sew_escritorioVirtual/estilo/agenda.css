@@ -1,0 +1,28 @@
+/* Adrian Estrada González UO276900 
+Font: arial, sans-serif Colores: (webaim) 
+Foreground : #141414 
+Background : #FFA384 */
+
+/* Especificidad: 001 */
+button {
+    padding: 2em 3em;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #141414;
+    /* Color de texto */
+    background-color: #FFA384;
+    /* Color de fondo */
+    border: 0.5em solid #141414;
+    /* Borde */
+    border-radius: 0.7em;
+    cursor: pointer;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+/* Especificidad: 011 */
+button:hover {
+    background-color: #926a5c;
+    text-decoration: none;
+    color: #ffffff;
+}

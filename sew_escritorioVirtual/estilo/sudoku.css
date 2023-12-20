@@ -1,0 +1,84 @@
+ /* Adrian Estrada González UO276900 
+Font: arial, sans-serif Colores: (webaim) 
+Foreground : #141414 
+Background : #FFA384 */
+ 
+ /* Especificidad: 012 */
+ main section:nth-child(3) {
+   display: grid;
+   grid-template-columns: repeat(9, 1fr);
+   grid-template-rows: repeat(10, 1fr);
+   gap: 0em;
+   max-width: 50em;
+   height: 50em;
+   justify-content: center;
+   margin: 3em;
+   box-shadow: 0 0 2em #0000001a;
+ }
+
+/* Especificidad: 001 */
+ h3 {
+  grid-column: 1/10;
+  font-size: 1.2em;
+  width: 100%;
+}
+
+/* Especificidad: 001 */
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 3em;
+}
+
+ /* Especificidad: 002 */
+ main h2 {
+   color: #333;
+   background-color: white;
+   border-bottom: 0.2em solid #333;
+   padding-bottom: 2em;
+   margin-bottom: 4em;
+ }
+
+ /* Especificidad: 001 */
+ p {
+   margin: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 1.2em;
+   border: 0.1em solid #000;
+   cursor: pointer;
+ }
+
+ /* Especificidad: 011 */
+ p[data-state="blocked"] {
+   background-color: #ddd;
+   color: black;
+ }
+
+ /* Especificidad: 011 */
+ p[data-state="clicked"] {
+   background-color: #FFA384;
+   color: black;
+ }
+
+ /* Especificidad: 011 */
+ p:nth-child(3n+1) {
+   border-right: 0.3em solid black;
+ }
+
+ /* Especificidad: 021 */
+ p:nth-child(n+20):nth-child(-n+28) {
+   border-bottom: 0.3em solid black;
+ }
+
+ /* Especificidad: 021 */
+ p:nth-child(n+47):nth-child(-n+55) {
+   border-bottom: 0.3em solid black;
+ }
+
+ /* Especificidad: 021 */
+ p:nth-child(n+74):nth-child(-n+82) {
+   border-bottom: 0.3em solid black;
+ }

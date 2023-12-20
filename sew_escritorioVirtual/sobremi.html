@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<html lang="es">
+
+<head>
+    <!-- Datos que describen el documento -->
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/icon" href="multimedia/favicon.ico">
+    <title> Escritorio Virtual - SobreMi</title>
+    <meta name="author" content="Adrian Estrada González" />
+    <meta name="description" content="Sobre mi" />
+    <meta name="keywords" content="adrian, aficiones, gustos, preferido, cantantes, asignaturas, alumno" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
+</head>
+
+<body>
+    <!-- Datos con el contenido que aparece en el navegador -->
+    <header>
+        <h1> Escritorio Virtual </h1>
+        <nav>
+            <ul>
+                <li><a tabindex="1" accesskey="I" href="index.html">Inicio</a></li>
+                <li><a tabindex="2" accesskey="S" href="sobremi.html">Sobre mi</a></li>
+                <li><a tabindex="3" accesskey="N" href="noticias.html">Noticias</a></li>
+                <li><a tabindex="4" accesskey="A" href="agenda.html">Agenda</a></li>
+                <li><a tabindex="5" accesskey="M" href="meteorologia.html">Meteorología</a></li>
+                <li><a tabindex="6" accesskey="J" href="juegos.html">Juegos</a></li>
+                <li><a tabindex="7" accesskey="V" href="viajes.php">Viajes</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2> Sobre mi </h2>
+        <section>
+            <h3> Datos personales </h3>
+            <p> UO276900</p>
+            <p> UO276900@uniovi.es</p>
+            <p> Soy un alumno de la Universidad de Oviedo, me gusta la
+                programación y los deportes </p>
+            <picture>
+                <!-- Imagen para móviles (max-width: 465px) -->
+                <source media="(max-width: 465px)" srcset="multimedia/yo_movil.png">
+
+                <!-- Imagen para tablets (max-width: 799px) -->
+                <source media="(max-width: 799px)" srcset="multimedia/yo_tablet.png">
+
+                <!-- Imagen por defecto para otros casos (min-width: 800px)-->
+                <img src="multimedia/yo.png" alt="Foto de perfil">
+            </picture>
+        </section>
+        <section>
+            <h3> Aficiones </h3>
+            <ul>
+                <li>Informática
+                    <ul>
+                        <li> Videojuegos</li>
+                        <li> Programación en Java</li>
+                        <li> Dialogar con Inteligencia Artificial</li>
+                    </ul>
+                </li>
+                <li>Cocinar
+                    <ul>
+                        <li> Macarrones con nata</li>
+                        <li> Comida Mexicana</li>
+                    </ul>
+                </li>
+                <li>Deportes
+                    <ul>
+                        <li> Futbol</li>
+                        <li> Baloncesto</li>
+                        <li> <a href="https://www.fvbpa.com/"> Voleibol </a> </li>
+                    </ul>
+                </li>
+
+            </ul>
+
+            <video controls>
+                <!-- Formato MP4 -->
+                <source src="multimedia/voley2.mp4" type="video/mp4">
+
+                <!-- Formato WebM -->
+                <source src="multimedia/voley2.webm" type="video/webm">
+
+                Tu navegador no soporta la reproducción de video.
+            </video>
+        </section>
+
+        <section>
+            <h3> Cantantes favoritos </h3>
+            <ol>
+                <li>Corrido Mexicano
+                    <ol>
+                        <li> <a href="https://es.wikipedia.org/wiki/Peso_Pluma_(cantante)"> Peso Pluma</a>
+                            <ol>
+                                <li> Ella Baila Sola </li>
+                                <li> Bizarrap Session </li>
+                            </ol>
+                        </li>
+                        <li> Natanael Cano</li>
+                    </ol>
+                </li>
+                <li>Trap
+                    <ol>
+                        <li> Quevedo</li>
+                        <li> Duki</li>
+                        <li> Khea</li>
+                    </ol>
+                </li>
+                <li>Pop
+                    <ol>
+                        <li> Fito & Fitipaldis</li>
+                        <li> Melendi</li>
+                    </ol>
+                </li>
+            </ol>
+
+            <p> Fragmento de "Ella Baila Sola - Peso Pluma"</p>
+            <audio controls>
+                <!-- Formato MP3 -->
+                <source src="multimedia/ellaBailaSola.mp3" type="audio/mpeg">
+
+                <!-- Formato Wav -->
+                <source src="multimedia/ellaBailaSola.wav" type="audio/wav">
+
+                Tu navegador no soporta la reproducción de audio.
+            </audio>
+
+            <p> Fragmento de "Bizarrap Session - Peso Pluma"</p>
+            <audio controls>
+                <!-- Formato MP3 -->
+                <source src="multimedia/pp_bzrp.mp3" type="audio/mpeg">
+
+                <!-- Formato Wav -->
+                <source src="multimedia/pp_bzrp.wav" type="audio/wav">
+
+                Tu navegador no soporta la reproducción de audio.
+            </audio>
+        </section>
+
+        <section>
+            <h3> Asignaturas favoritas </h3>
+            <dl>
+                <dt>Diseño de Lenguajes de Programación </dt>
+                <dd>Me permite aplicar los conocimientos aprendidos, me gusta diseñar lenguajes de programación y
+                    compiladores </dd>
+                <dt>Computacion Persona-Máquina </dt>
+                <dd>Me gusta el diseño de pantallas de cara al usuario, la interfaz gráfica y el frontend de los
+                    proyectos </dd>
+                <dt>Bases de datos</dt>
+                <dd> Me gustó trabajar con datos reales y realizar consultas SQL para conseguir objetivos</dd>
+                <dt> Software y estándares de la Web</dt>
+                <dd> Aprender a hacer páginas web es fundamental y me gusta el diseño con html y css</dd>
+                <dt> Metodología de la programación</dt>
+                <dd> Me gustó ya que fue la base de la programación en java</dd>
+            </dl>
+        </section>
+        <aside>
+            <h3> Temperatura Media en Gijón</h3>
+            <p> La siguiente tabla muestra información sobre la temperatura en Gijón, en los últimos diez años</p>
+            <table>
+                <caption>Temperatura media en Gijón en los últimos 10 años</caption>
+                <tbody>
+                    <tr>
+                        <th scope="col" id="año">Año</th>
+                        <th scope="col" id="2013">2013</th>
+                        <th scope="col" id="2014">2014</th>
+                        <th scope="col" id="2015">2015</th>
+                        <th scope="col" id="2016">2016</th>
+                        <th scope="col" id="2017">2017</th>
+                        <th scope="col" id="2018">2018</th>
+                        <th scope="col" id="2019">2019</th>
+                        <th scope="col" id="2020">2020</th>
+                        <th scope="col" id="2021">2021</th>
+                        <th scope="col" id="2022">2022</th>
+                    </tr>
+                    <tr>
+                        <th scope="row" id="temperatura">Temperatura (ºC)</th>
+                        <td headers="temperatura 2013">15 ºC</td>
+                        <td headers="temperatura 2014">16 ºC</td>
+                        <td headers="temperatura 2015">17 ºC</td>
+                        <td headers="temperatura 2016">16.7 ºC</td>
+                        <td headers="temperatura 2017">18.1 ºC</td>
+                        <td headers="temperatura 2018">19 ºC</td>
+                        <td headers="temperatura 2019">15.3 ºC</td>
+                        <td headers="temperatura 2020">17.9 ºC</td>
+                        <td headers="temperatura 2021">18 ºC</td>
+                        <td headers="temperatura 2022">20.1 ºC</td>
+                    </tr>
+                </tbody>
+            </table>
+        </aside>
+    </main>
+</body>
+
+</html>

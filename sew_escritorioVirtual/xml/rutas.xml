@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rutas SYSTEM "rutas.dtd">
+<rutas>
+    <ruta>
+        <nombre>Ruta por el Desierto de Atacama y sus playas</nombre>
+        <tipo>Paisajismo</tipo>
+        <transporte>Coche</transporte>
+        <fecha>2030-10-30</fecha>
+        <hora>10:00:00</hora>
+        <duracion>4 horas</duracion>
+        <agencia>Sin agencia</agencia>
+        <descripcion>Si buscas escapar de la rutina, un viaje por la Región de Atacama es una excelente alternativa porque lo tiene todo: te sorprenderán sus hermosas playas, dunas y sitios históricos.</descripcion>
+        <personas>Se puede ir con niños, para todas las edades</personas>
+        <inicio>
+            <lugar>Bahía Inglesa</lugar>
+            <direccion>Atacama, Chile</direccion>
+            <coordenadas>
+                <longitud>-27.751</longitud>
+                <latitud>-70.866</latitud>
+                <altitud>10</altitud>
+            </coordenadas>
+        </inicio>
+        <referencias>
+            <referencia>https://es.wikipedia.org/wiki/Bah%C3%ADa_Inglesa_(Chile)</referencia>
+            <referencia>https://www.google.es/maps/place/Bahia+Inglesa/@-27.1008749,-70.8642584,16.25z/data=!4m19!1m12!4m11!1m3!2m2!1d-70.8572033!2d-27.1029389!1m6!1m2!1s0x96bd6856129c13f9:0xc84b062fbb270021!2sBahia+Inglesa,+Atacama,+Chile!2m2!1d-70.8573022!2d-27.1032796!3m5!1s0x96bd6856129c13f9:0xc84b062fbb270021!8m2!3d-27.1032796!4d-70.8573022!16s%2Fg%2F11byl53jg8?entry=ttu</referencia>
+        </referencias>
+        <recomendacion>8</recomendacion>
+        <hitos>
+            <hito>
+                <nombre>Playa la Virgen y Mar de Dunas</nombre>
+                <descripcion>Playa La Virgen de Caldera, conocida por su arena blanca y aguas color turquesa.</descripcion>
+                <coordenadas>
+                    <longitud>-27.089601</longitud>
+                    <latitud>-70.848392</latitud>
+                    <altitud>25</altitud>
+                </coordenadas>
+                <distancia_anterior>
+                    <unidades>10</unidades>
+                </distancia_anterior>
+                <galeria_fotografias>
+                    <fotografia>Bahia_Inglesa,Chile.jpg</fotografia>
+                </galeria_fotografias>
+            </hito>
+            <hito>
+                <nombre>Parque Nacional Pan de Azúcar</nombre>
+                <descripcion>Este lugar, en medio del desierto, es ideal para ver el fenómeno conocido como Desierto Florido.</descripcion>
+                <coordenadas>
+                    <longitud>-26.149722</longitud>
+                    <latitud>-70.650556</latitud>
+                    <altitud>65</altitud>
+                </coordenadas>
+                <distancia_anterior>
+                    <unidades>128</unidades>
+                </distancia_anterior>
+                <galeria_fotografias>
+                    <fotografia>mardunas.jpg</fotografia>
+                </galeria_fotografias>
+            </hito>
+            <hito>
+                <nombre>Llanos de Challe y olivos centenarios</nombre>
+                <descripcion>Después de tomar desayuno en la Playa la Virgen, te desplazarás por el Circuito Costero rumbo al Parque Llanos de Challe, otro lugar ideal para ver el Desierto Florido.</descripcion>
+                <coordenadas>
+                    <longitud>-28.158813</longitud>
+                    <latitud>-71.161476</latitud>
+                    <altitud>8</altitud>
+                </coordenadas>
+                <distancia_anterior>
+                    <unidades>155</unidades>
+                </distancia_anterior>
+                <galeria_fotografias>
+                    <fotografia>llanos.jpg</fotografia>
+                </galeria_fotografias>
+            </hito>
+        </hitos>
+    </ruta>
+    <ruta>
+        <nombre>Ruta por el Centro Histórico</nombre>
+        <tipo>Cultural</tipo>
+        <transporte>A pie</transporte>
+        <fecha>2030-10-31</fecha>
+        <hora>09:00:00</hora>
+        <duracion>6 horas</duracion>
+        <agencia>Sin agencia</agencia>
+        <descripcion>Además de pasear por sus jardines, desde lo más alto donde está situado el famoso castillo de Hidalgo podréis disfrutar de una de las mejores vistas a la ciudad, con una panorámica general hacia la cordillera y el cerro San Cristóbal.</descripcion>
+        <personas>Se puede ir con niños, para todas las edades</personas>
+        <inicio>
+            <lugar>Cerro de Santa Lucía</lugar>
+            <direccion>Plaza Pedro de Valdibia, Chile</direccion>
+            <coordenadas>
+                <longitud>-33.440192</longitud>
+                <latitud>-70.643285</latitud>
+                <altitud>629</altitud>
+            </coordenadas>
+        </inicio>
+        <referencias>
+            <referencia>https://es.wikipedia.org/wiki/Cerro_Santa_Luc%C3%ADa#:~:text=Tiene%20una%20altitud%20de%20629,una%20superficie%20de%2065300%20m%C2%B2.</referencia>
+            <referencia>https://pasaportenomada.es/que-ver-en-santiago-de-chile-en-2-dias/</referencia>
+        </referencias>
+        <recomendacion>7</recomendacion>
+        <hitos>
+            <hito>
+                <nombre>Barrio Paris - Londres y Palacio de la Moneda</nombre>
+                <descripcion>Se trata de un edificio muy revelador en cuanto a numerosos acontecimientos relacionados con la dictadura del General Pinochet</descripcion>
+                <coordenadas>
+                    <longitud>-33.442883</longitud>
+                    <latitud>-70.653852</latitud>
+                    <altitud>550</altitud>
+                </coordenadas>
+                <distancia_anterior>
+                    <unidades>1.02</unidades>
+                </distancia_anterior>
+                <galeria_fotografias>
+                    <fotografia>moneda.jpg</fotografia>
+                </galeria_fotografias>
+            </hito>
+            <hito>
+                <nombre>Plaza de Armas</nombre>
+                <descripcion>Además de la famosa estatua ecuestre de Pedro Valdivia, en la plaza podréis visitar algunos de los edificios más importantes de la ciudad, como el edificio de Correos de Chile y el Museo Histórico Nacional.</descripcion>
+                <coordenadas>
+                    <longitud>-33.437763</longitud>
+                    <latitud>-70.650517</latitud>
+                    <altitud>560</altitud>
+                </coordenadas>
+                <distancia_anterior>
+                    <unidades>1.67</unidades>
+                </distancia_anterior>
+                <galeria_fotografias>
+                    <fotografia>armas.jpg</fotografia>
+                </galeria_fotografias>
+            </hito>
+            <hito>
+                <nombre>Lastarria, el barrio bohemio de la ciudad</nombre>
+                <descripcion>Los amantes de la historia antigua podéis visitar el Museo Chileno de Arte Precolombino, una joya que alberga numerosas colecciones relacionadas con la diversidad cultural americana, donde destaca su valiosa exposición textil andina con piezas de más de 3.000 años de antigüedad.</descripcion>
+                <coordenadas>
+                    <longitud>-33.438102</longitud>
+                    <latitud>-70.641079</latitud>
+                    <altitud>588</altitud>
+                </coordenadas>
+                <distancia_anterior>
+                    <unidades>2.54</unidades>
+                </distancia_anterior>
+                <galeria_fotografias>
+                    <fotografia>Lastarria.jpg</fotografia>
+                </galeria_fotografias>
+            </hito>
+        </hitos>
+    </ruta>
+    <ruta>
+        <nombre>Excursión a la Cordillera de los Andes</nombre>
+        <tipo>Montañismo</tipo>
+        <transporte>A pie</transporte>
+        <fecha>2030-11-02</fecha>
+        <hora>09:00:00</hora>
+        <duracion>12 horas</duracion>
+        <agencia>Sin agencia</agencia>
+        <descripcion>Esta emocionante excursión te lleva desde la bulliciosa ciudad de Santiago hasta la majestuosa Cordillera de los Andes, una cadena montañosa imponente que ofrece vistas panorámicas y experiencias únicas</descripcion>
+        <personas>A partir de 14 años, dificultad media</personas>
+        <inicio>
+            <lugar>Pueblo El Volcán</lugar>
+            <direccion>San José de Maipo, Chile</direccion>
+            <coordenadas>
+                <longitud>-33.4848</longitud>
+                <latitud>-70.1001</latitud>
+                <altitud>1516</altitud>
+            </coordenadas>
+        </inicio>
+        <referencias>
+            <referencia>https://es.wikipedia.org/wiki/Embalse_El_Yeso#:~:text=El%20embalse%20se%20encuentra%20en,Cordillera%2C%20Regi%C3%B3n%20Metropolitana%20de%20Santiago.</referencia>
+        </referencias>
+        <recomendacion>10</recomendacion>
+        <hitos>
+            <hito>
+                <nombre>Termas Valle de Colina</nombre>
+                <descripcion>Termas Valle de Colina te invita a disfrutar de sus aguas termales 100% naturales a 109 km de Santiago, en pleno corazón de la Cordillera de los Andes</descripcion>
+                <coordenadas>
+                    <longitud>-33.849989</longitud>
+                    <latitud>-69.982051</latitud>
+                    <altitud>2606</altitud>
+                </coordenadas>
+                <distancia_anterior>
+                    <unidades>22.4</unidades>
+                </distancia_anterior>
+                <galeria_fotografias>
+                    <fotografia>termas.jpg</fotografia>
+                </galeria_fotografias>
+            </hito>
+            <hito>
+                <nombre>Embalse El Yeso</nombre>
+                <descripcion>El embalse El Yeso es una reserva artificial de agua acumulada mediante una represa ubicado en la cordillera de los Andes.</descripcion>
+                <coordenadas>
+                    <longitud>-33.65</longitud>
+                    <latitud>-70.066667</latitud>
+                    <altitud>2605</altitud>
+                </coordenadas>
+                <distancia_anterior>
+                    <unidades>55.6</unidades>
+                </distancia_anterior>
+                <galeria_fotografias>
+                    <fotografia>elyeso.jpg</fotografia>
+                </galeria_fotografias>
+            </hito>
+            <hito>
+                <nombre>Valle Nevado</nombre>
+                <descripcion>Valle Nevado es un centro de esquí ubicado en Farellones a 64 kilómetros al oriente de Santiago, la capital de Chile.</descripcion>
+                <coordenadas>
+                    <longitud>-33.3241155</longitud>
+                    <latitud>-70.256665</latitud>
+                    <altitud>3500</altitud>
+                </coordenadas>
+                <distancia_anterior>
+                    <unidades>151</unidades>
+                </distancia_anterior>
+                <galeria_fotografias>
+                    <fotografia>vnevado.jpg</fotografia>
+                </galeria_fotografias>
+            </hito>
+        </hitos>
+    </ruta>
+</rutas>
